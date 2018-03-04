@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block page_content %}
+    <h1>Log</h1>
+    <table class="table">
+        <tr>
+            <th>id</th>
+            <th>time</th>
+            <th>user</th>
+            <th>log</th>
+        </tr>
+        {% for x in data %}
+        <tr>
+            <td class="col-md-1">{{ x.id }}</td>
+            <td class="col-md-3">{{ x.time }}</td>
+            <td class="col-md-2">{% if x.user %}{{ x.user }}{% else %}-{% endif %}</td>
+            <td class="col-md-6">{{ x.log }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    
+    
+{% endblock %}
